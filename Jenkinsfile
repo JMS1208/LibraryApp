@@ -15,7 +15,7 @@ pipeline {
         stage('Stop Existing Process') {
                     steps {
                         script {
-                            sh 'fuser -n tcp -k 8080'
+                            sh 'kill -9 $(lsof -t -i:8080)'
                         }
                     }
                 }
