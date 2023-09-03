@@ -15,10 +15,11 @@ pipeline {
         stage('Stop Current Application') {
             steps {
                 script {
-                    try {
-                        sh "fuser -k 8080/tcp"
-                    } catch (Exception e) {
-                        echo "No process found on port 8080"
+                    def processId = sh(returnStatus: true, script: "sudo lsof -t -i:8080").trim()
+                    if (processId) {
+                        sh "sudo kill -9 $processId"
+                    } else {
+                        error "No process found on port 8080"
                     }
                 }
             }
