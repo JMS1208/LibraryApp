@@ -16,7 +16,7 @@ pipeline {
                     steps {
                         script {
                             // 이전 배포 중인 어플리케이션 프로세스 종료
-                            sh 'sudo kill -9 $(lsof -t -i:8080) || true'
+                            sh 'sudo kill -9 $(lsof -t -i:8080)'
                         }
                     }
                 }
