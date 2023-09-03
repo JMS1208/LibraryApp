@@ -7,6 +7,13 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Stop Existing Process') {
+            steps {
+                script {
+                    sh 'fuser -n tcp -k 8080'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 sh './gradlew build -x test'
