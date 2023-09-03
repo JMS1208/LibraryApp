@@ -16,10 +16,7 @@ pipeline {
                     steps {
                         script {
                             // 이전 배포 중인 어플리케이션 프로세스 종료
-                            def oldProcessPid = sh(script: "lsof -t -i:8080", returnStdout: true).trim()
-                            if (oldProcessPid) {
-                                sh "kill -9 ${oldProcessPid}"
-                            }
+                            sh 'sudo kill -9 $(lsof -t -i:8080) || true'
                         }
                     }
                 }
