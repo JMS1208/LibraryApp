@@ -8,17 +8,12 @@ pipeline {
             }
         }
         stage('Kill port') {
-                    steps{
-                        sh'''
-                        if [ "$(lsof -t -i :8080 -s TCP:LISTEN)" != "" ]; then
-                            kill -9 $(lsof -t -i :8080 -s TCP:LISTEN)
-                            echo "$pid process kill complete"
-                        else
-                            echo "pid is empty"
-                        fi
-                    '''
-                    }
+            steps{
+                script {
+                    sh "sudo kill -9 \$(lsof -t -i:8080)"
                 }
+            }
+        }
         stage('Build') {
             steps {
                 sh './gradlew build -x test'
