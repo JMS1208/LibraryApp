@@ -15,16 +15,11 @@ pipeline {
         stage('Stop Existing Process') {
                     steps {
                         script {
-                            sh '''
-                                                PORT=8080
-                                                PID=$(lsof -t -i:$PORT)
-                                                if [ -n "$PID" ]; then
-                                                    echo "Killing process $PID using port $PORT"
-                                                    kill -9 $PID
-                                                else
-                                                    echo "No process found using port $PORT"
-                                                fi
-                                                '''
+                            // 이전 배포 중인 어플리케이션 프로세스 종료
+                            def oldProcessPid = sh(script: "lsof -t -i:8080", returnStdout: true).trim()
+                            if (oldProcessPid) {
+                                sh "kill -9 ${oldProcessPid}"
+                            }
                         }
                     }
                 }
