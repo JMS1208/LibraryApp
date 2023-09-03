@@ -7,18 +7,18 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Stop Existing Process') {
-            steps {
-                script {
-                    sh 'fuser -n tcp -k 8080'
-                }
-            }
-        }
         stage('Build') {
             steps {
                 sh './gradlew build -x test'
             }
         }
+        stage('Stop Existing Process') {
+                    steps {
+                        script {
+                            sh 'fuser -n tcp -k 8080'
+                        }
+                    }
+                }
         stage('Deploy') {
             steps {
                 sh 'java -jar build/libs/library-app-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev'
