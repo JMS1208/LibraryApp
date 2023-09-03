@@ -1,4 +1,6 @@
 package com.study.libraryapp.dto.book.request
 
-class BookLoanRequest {
-}
+data class BookLoanRequest(
+    val userName: String,
+    val bookName: String
+)
