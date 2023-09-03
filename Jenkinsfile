@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh './gradlew bootJar --spring.profiles.active=dev'
+                sh 'java -jar build/libs/library-app-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev'
             }
         }
     }
