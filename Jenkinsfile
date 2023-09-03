@@ -15,7 +15,16 @@ pipeline {
         stage('Stop Existing Process') {
                     steps {
                         script {
-                            sh 'kill -9 $(lsof -t -i:8080)'
+                            sh '''
+                                                PORT=8080
+                                                PID=$(lsof -t -i:$PORT)
+                                                if [ -n "$PID" ]; then
+                                                    echo "Killing process $PID using port $PORT"
+                                                    kill -9 $PID
+                                                else
+                                                    echo "No process found using port $PORT"
+                                                fi
+                                                '''
                         }
                     }
                 }
