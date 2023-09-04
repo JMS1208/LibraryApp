@@ -11,10 +11,11 @@ pipeline {
             steps{
                 script {
                     sh '''
-                    if [ -n "$(lsof -t -i:8080)" ]; then
-                    sudo kill -9 $(lsof -t -i:8080)
+                    jenkins_lsof=$(sudo -u jenkins lsof -t -i:8080)
+                    if [ -n "$jenkins_lsof" ]; then
+                        sudo kill -9 $jenkins_lsof
                     else
-                    echo "No process is running on port 8080"
+                        echo "No process is running on port 8080"
                     fi
                     '''
                 }
