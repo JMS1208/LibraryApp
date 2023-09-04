@@ -1,17 +1,15 @@
 package com.study.libraryapp.service.book
 
 import com.study.libraryapp.domain.book.Book
-import com.study.libraryapp.dto.book.request.BookCreateRequest
 import com.study.libraryapp.domain.book.BookRepository
 import com.study.libraryapp.domain.user.User
 import com.study.libraryapp.domain.user.UserRepository
-import com.study.libraryapp.domain.user.loan_history.UserLoanHistory
 import com.study.libraryapp.domain.user.loan_history.UserLoanHistoryRepository
+import com.study.libraryapp.dto.book.request.BookCreateRequest
 import com.study.libraryapp.dto.book.request.BookLoanRequest
 import com.study.libraryapp.dto.book.request.BookReturnRequest
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.lang.IllegalArgumentException
 
 @Service
 class BookService(
