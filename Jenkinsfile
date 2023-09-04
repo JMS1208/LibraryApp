@@ -7,20 +7,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Kill port') {
-            steps{
-                script {
-                    sh '''
-                    jenkins_lsof=$(sudo -u jenkins lsof -t -i:8080)
-                    if [ -n "$jenkins_lsof" ]; then
-                        sudo kill -9 $jenkins_lsof
-                    else
-                        echo "No process is running on port 8080"
-                    fi
-                    '''
-                }
-            }
-        }
         stage('Build') {
             steps {
                 sh './gradlew build -x test'
