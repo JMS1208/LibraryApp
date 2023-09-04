@@ -10,7 +10,13 @@ pipeline {
         stage('Kill port') {
             steps{
                 script {
-                    sh "sudo kill -9 \$(lsof -t -i:8080)"
+                    sh '''
+                    if [ -n "$(lsof -t -i:8080)" ]; then
+                    sudo kill -9 $(lsof -t -i:8080)
+                    else
+                    echo "No process is running on port 8080"
+                    fi
+                    '''
                 }
             }
         }
