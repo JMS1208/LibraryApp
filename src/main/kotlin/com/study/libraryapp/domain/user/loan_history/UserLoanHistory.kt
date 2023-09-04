@@ -1,7 +1,7 @@
 package com.study.libraryapp.domain.user.loan_history
 
 import com.study.libraryapp.domain.user.User
-import javax.persistence.*
+import jakarta.persistence.*
 
 @Entity
 data class UserLoanHistory(

@@ -2,8 +2,8 @@ package com.study.libraryapp.domain.user
 
 
 import com.study.libraryapp.domain.user.loan_history.UserLoanHistory
-import javax.persistence.*
-import javax.validation.constraints.NotBlank
+import jakarta.persistence.*
+import jakarta.validation.constraints.NotBlank
 
 /*
 스프링이 User 객체와 user 테이블을 같은 것으로 바라보게 만듦

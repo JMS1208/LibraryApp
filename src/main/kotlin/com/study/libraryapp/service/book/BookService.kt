@@ -9,7 +9,6 @@ import com.study.libraryapp.domain.user.loan_history.UserLoanHistory
 import com.study.libraryapp.domain.user.loan_history.UserLoanHistoryRepository
 import com.study.libraryapp.dto.book.request.BookLoanRequest
 import com.study.libraryapp.dto.book.request.BookReturnRequest
-import net.bytebuddy.pool.TypePool.Resolution.Illegal
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.lang.IllegalArgumentException
