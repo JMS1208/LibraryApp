@@ -4,6 +4,7 @@ import com.study.libraryapp.dto.user.request.UserCreateRequest
 import com.study.libraryapp.dto.user.request.UserUpdateRequest
 import com.study.libraryapp.dto.user.response.UserResponse
 import com.study.libraryapp.service.user.UserService
+import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.*
 
 /*
@@ -19,11 +20,13 @@ class UserController(
     fun saveUser(
         @RequestBody request: UserCreateRequest
     ) {
+
         userService.saveUser(request)
     }
 
     @GetMapping("/user")
     fun getUsers(): List<UserResponse> {
+        println("테스트!!!!!!!!!!!!!")
         return userService.getUsers()
     }
 

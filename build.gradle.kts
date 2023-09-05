@@ -29,14 +29,12 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
     implementation(project(":data"))
     implementation(project(":presentation"))
     implementation(project(":domain"))
 
-    //LomBok
-    runtimeOnly("org.projectlombok:lombok")
-    annotationProcessor("org.projectlombok:lombok")
+    //Starter Web
+    implementation("org.springframework.boot:spring-boot-starter-web")
 
     //Thymeleaf
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
