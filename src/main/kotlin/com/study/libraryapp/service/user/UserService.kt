@@ -1,5 +1,6 @@
 package com.study.libraryapp.service.user
 
+import com.minseok.data.model.User2
 import com.study.libraryapp.domain.user.User
 import com.study.libraryapp.domain.user.UserRepository
 import com.study.libraryapp.dto.user.request.UserCreateRequest
@@ -7,7 +8,6 @@ import com.study.libraryapp.dto.user.request.UserUpdateRequest
 import com.study.libraryapp.dto.user.response.UserResponse
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.lang.IllegalArgumentException
 
 @Service
 class UserService (
@@ -23,6 +23,7 @@ class UserService (
             name = request.name,
             age = request.age
         ))
+
         println("유저 저장됨: $savedUser")
     }
 
