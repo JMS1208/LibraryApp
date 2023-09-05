@@ -1,5 +1,6 @@
-package com.study.libraryapp.domain.user
+package com.minseok.data.repository.user
 
+import com.minseok.data.entity.user.User
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 

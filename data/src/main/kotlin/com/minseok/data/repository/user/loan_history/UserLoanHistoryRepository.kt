@@ -1,5 +1,6 @@
-package com.study.libraryapp.domain.user.loan_history
+package com.minseok.data.repository.user.loan_history
 
+import com.minseok.data.entity.user.loan_history.UserLoanHistory
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 

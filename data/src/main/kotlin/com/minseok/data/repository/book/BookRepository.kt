@@ -1,9 +1,7 @@
-package com.study.libraryapp.domain.book
+package com.minseok.data.repository.book
 
-import com.study.libraryapp.domain.book.Book
+import com.minseok.data.entity.book.Book
 import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.jdbc.core.JdbcTemplate
-import org.springframework.stereotype.Repository
 import java.util.*
 
 interface BookRepository : JpaRepository<Book, Long> {

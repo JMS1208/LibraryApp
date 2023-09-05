@@ -1,8 +1,8 @@
 package com.study.libraryapp.service.user
 
 
-import com.study.libraryapp.domain.user.User
-import com.study.libraryapp.domain.user.UserRepository
+import com.minseok.data.entity.user.User
+import com.minseok.data.repository.user.UserRepository
 import com.study.libraryapp.dto.user.request.UserCreateRequest
 import com.study.libraryapp.dto.user.request.UserUpdateRequest
 import com.study.libraryapp.dto.user.response.UserResponse
@@ -19,10 +19,12 @@ class UserService (
     //이때 IOException 과 같은 Checked Exception 은 롤백이 일어나지 않음
     @Transactional
     fun saveUser(request: UserCreateRequest) {
-        val savedUser = repository.save(User(
+        val savedUser = repository.save(
+            User(
             name = request.name,
             age = request.age
-        ))
+        )
+        )
 
         println("유저 저장됨: $savedUser")
     }

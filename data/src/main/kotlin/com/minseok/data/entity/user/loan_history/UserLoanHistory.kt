@@ -1,6 +1,6 @@
-package com.study.libraryapp.domain.user.loan_history
+package com.minseok.data.entity.user.loan_history
 
-import com.study.libraryapp.domain.user.User
+import com.minseok.data.entity.user.User
 import jakarta.persistence.*
 
 @Entity

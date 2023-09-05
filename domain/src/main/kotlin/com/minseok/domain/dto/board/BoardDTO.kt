@@ -1,8 +1,6 @@
 package com.study.libraryapp.dto.board
 
-import org.hibernate.annotations.GeneratorType
 import java.time.LocalDateTime
-import jakarta.persistence.Id
 
 
 data class BoardDTO(

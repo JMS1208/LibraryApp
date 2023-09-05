@@ -1,9 +1,8 @@
-package com.study.libraryapp.domain.user
+package com.minseok.data.entity.user
 
 
-import com.study.libraryapp.domain.user.loan_history.UserLoanHistory
+import com.minseok.data.entity.user.loan_history.UserLoanHistory
 import jakarta.persistence.*
-import jakarta.validation.constraints.NotBlank
 
 /*
 스프링이 User 객체와 user 테이블을 같은 것으로 바라보게 만듦

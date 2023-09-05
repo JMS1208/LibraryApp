@@ -24,23 +24,15 @@ repositories {
 
 dependencies {
 
-    implementation("mysql:mysql-connector-java:${Versions.mysqlConnector}")
-    implementation("org.springframework.boot:spring-boot-starter-web")
+
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
 
     implementation(project(":data"))
     implementation(project(":presentation"))
     implementation(project(":domain"))
-
-    //JPA
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-
-    //H2-DB
-    runtimeOnly("com.h2database:h2")
 
     //LomBok
     runtimeOnly("org.projectlombok:lombok")

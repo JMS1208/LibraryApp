@@ -23,6 +23,18 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	//JPA
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+	//H2-DB
+	runtimeOnly("com.h2database:h2")
+
+	//MySQL
+	implementation("mysql:mysql-connector-java:${Versions.mysqlConnector}")
+
+	//Validation
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.withType<KotlinCompile> {

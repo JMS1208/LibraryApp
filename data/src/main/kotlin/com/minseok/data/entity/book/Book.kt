@@ -1,4 +1,4 @@
-package com.study.libraryapp.domain.book
+package com.minseok.data.entity.book
 
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank

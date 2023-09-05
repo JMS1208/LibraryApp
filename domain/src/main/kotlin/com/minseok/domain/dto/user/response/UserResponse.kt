@@ -1,6 +1,6 @@
 package com.study.libraryapp.dto.user.response
 
-import com.study.libraryapp.domain.user.User
+import com.minseok.data.entity.user.User
 
 data class UserResponse(
     val id: Long,

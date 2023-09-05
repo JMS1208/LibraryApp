@@ -1,10 +1,10 @@
 package com.study.libraryapp.service.book
 
-import com.study.libraryapp.domain.book.Book
-import com.study.libraryapp.domain.book.BookRepository
-import com.study.libraryapp.domain.user.User
-import com.study.libraryapp.domain.user.UserRepository
-import com.study.libraryapp.domain.user.loan_history.UserLoanHistoryRepository
+import com.minseok.data.entity.book.Book
+import com.minseok.data.repository.book.BookRepository
+import com.minseok.data.entity.user.User
+import com.minseok.data.repository.user.UserRepository
+import com.minseok.data.repository.user.loan_history.UserLoanHistoryRepository
 import com.study.libraryapp.dto.book.request.BookCreateRequest
 import com.study.libraryapp.dto.book.request.BookLoanRequest
 import com.study.libraryapp.dto.book.request.BookReturnRequest
