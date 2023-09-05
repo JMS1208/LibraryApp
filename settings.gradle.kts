@@ -1,2 +1,2 @@
 rootProject.name = "library-app"
-include(":data")
+include(":data", ":presentation", ":domain")

@@ -1,6 +1,6 @@
 package com.study.libraryapp.service.user
 
-import com.minseok.data.model.User2
+
 import com.study.libraryapp.domain.user.User
 import com.study.libraryapp.domain.user.UserRepository
 import com.study.libraryapp.dto.user.request.UserCreateRequest

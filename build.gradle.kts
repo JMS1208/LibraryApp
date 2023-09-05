@@ -1,19 +1,22 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.1.2"
-    id("io.spring.dependency-management") version "1.1.3"
-    id("org.jetbrains.kotlin.jvm") version "1.8.22"
-    id("org.jetbrains.kotlin.plugin.spring") version "1.8.22"
-    id("org.jetbrains.kotlin.plugin.noarg") version "1.8.10"
+    id("org.springframework.boot") version Versions.springBoot
+    id("io.spring.dependency-management") version Versions.springDependencyManager
+    id("org.jetbrains.kotlin.jvm") version Versions.kotlinPlugin
+    id("org.jetbrains.kotlin.plugin.spring") version Versions.kotlinPlugin
+    id("org.jetbrains.kotlin.plugin.noarg") version Versions.kotlinPlugin
 }
 
-group = "com.minseok"
-version = "0.0.1-SNAPSHOT"
+group = Constants.group
+
+version = Versions.project
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
 }
+
+
 
 repositories {
     mavenCentral()
@@ -21,14 +24,17 @@ repositories {
 
 dependencies {
 
-    implementation("mysql:mysql-connector-java:8.0.32")
+    implementation("mysql:mysql-connector-java:${Versions.mysqlConnector}")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+
     implementation(project(":data"))
+    implementation(project(":presentation"))
+    implementation(project(":domain"))
 
     //JPA
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
